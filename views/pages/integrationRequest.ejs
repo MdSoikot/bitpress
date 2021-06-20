@@ -1,0 +1,112 @@
+<%- include('../template/header'); -%>
+
+    <body>
+
+        <head>
+            <%- include('../template/topbar'); -%>
+
+            <div class="navbar bit-integrator-nav" id="navbar">
+                <div class="container flex flex-between">
+                    <div class="logo flex">
+                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                alt="file not found"></a>
+                    </div>
+                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                src="/Assets/images/cancel.svg" alt="file not found"></a>
+                        <a href="index.html">Integrations</a>
+
+                        <div class="nav-btn">
+                            <a href="index.html">Signup</a>
+                            <a href="index.html">Login</a>
+
+                        </div>
+                    </div>
+                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                        <i class="fas fa-bars" style="font-size:30px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </head>
+
+        <div class="integration-request mt-4">
+            <section class="showcase text-center">
+                <div class="container">
+                    <div class="integration-request-text">
+                        <h2>Integration Request</h2>
+                        <p>Please metion the applications name that you want integration between them.
+                            And write us in details what kind of integration you want.</p>
+                    </div>
+                    <div class="integration-image">
+                        <div class="item-left">
+                            <div class="image">
+                                <img src="assets/images/App1.svg" alt="file not found">
+                            </div>
+                            <div class="text">
+                                APP 1
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="image">
+                                <img src="assets/images/App2.svg" alt="file not found">
+                            </div>
+                            <div class="text">
+                                APP 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-form">
+                        <form>
+                            <div class="first">
+                                <input type="text" placeholder="Enter Your App Name">
+                                <input type="text" placeholder="Enter Your App Name">
+                            </div>
+                            <div class="last">
+                                <textarea placeholder="Add Your Description" rows="13"></textarea>
+                                <div class="button">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </section>
+
+            <section class="support mt-5">
+                <div class="container grid grid-fr-1">
+                    <div class="card mt-5 text-center">
+                        <div class="card-item flex flex-center">
+                            <div class="live-chat">
+                                <img src="/assets/images/chat.svg" alt="file not found">
+                                <div class="content">
+                                    <h2>24/7 Live chat support
+
+                                    </h2>
+                                    <p> Ask any questions anytime.
+                                        We're ready to take on any WordPress
+                                        question</p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="/assets/images/support.svg" alt="file not found">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <%- include('../template/integrator-footer'); -%>
+
+        </div>
+
+        <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+            <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+        </button>
+
+        <%- include('../template/script'); -%>
+
+    </body>

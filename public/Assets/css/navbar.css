@@ -1,0 +1,122 @@
+.navbar {
+  height: 70px;
+  padding: 10px 20px;
+}
+
+.navbar .logo img {
+  width: 120px;
+  height: 29px;
+}
+
+.navbar .links a {
+  padding: 0px 10px;
+  color: var(--nav-color);
+  font-size: 14px;
+}
+
+.navbar .links .closebtn {
+  display: none;
+}
+
+.navbar .nav-btn a {
+  padding: 4px 30px;
+  border-radius: 8px;
+  border: 1px solid var(--red-primary);
+}
+
+.navbar .nav-btn a:first-child {
+  font-weight: bold;
+  color: #17283f;
+  margin-right: 10px;
+}
+
+.navbar .nav-btn a:last-child {
+  background-color: var(--red-primary);
+  color: #fff;
+}
+
+.navbar .responsive-menu {
+  display: none;
+}
+
+.bitform-nav {
+  z-index: 9999;
+  -webkit-box-shadow: 0 4px 6px -2px #dfdfdf;
+          box-shadow: 0 4px 6px -2px #dfdfdf;
+  height: 60px;
+}
+
+.bitform-nav .container {
+  padding: 0 100px;
+}
+
+.bitform-nav img {
+  height: 30px !important;
+}
+
+.bitform-nav .nav-btn a {
+  border: 1px solid #214eec;
+  padding: 6px 35px;
+}
+
+.bitform-nav .nav-btn a:last-child {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.63%, #4672ee), to(#214eec));
+  background: linear-gradient(180deg, #4672ee 0.63%, #214eec 100%);
+}
+
+.bit-integrator-nav {
+  -webkit-box-shadow: 0 4px 6px -2px #dfdfdf;
+          box-shadow: 0 4px 6px -2px #dfdfdf;
+  height: 60px;
+}
+
+.bit-integrator-nav .container {
+  padding: 0 100px;
+}
+
+.bit-integrator-nav img {
+  height: 30px !important;
+  width: 160px !important;
+}
+
+.bit-integrator-nav .nav-btn a {
+  padding: 6px 35px;
+}
+
+.bit-integrator-nav .nav-btn a:first-child {
+  border: 1px solid var(--btn-outline);
+}
+
+.bit-integrator-nav .nav-btn a:last-child {
+  background: #000;
+  border: 1px solid #000;
+}
+
+.top-bar {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.top-bar .navbar {
+  padding: 10px 20px;
+}
+
+.top-bar .navbar .flex {
+  gap: 10px;
+}
+
+.top-bar .navbar .logo img {
+  width: 70px;
+  height: 18px;
+}
+
+.top-bar .navbar .links a {
+  font-size: 12px;
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,196 @@
+<%- include('../template/header'); -%>
+
+    <body>
+
+        <head>
+            <%- include('../template/topbar'); -%>
+
+            <div class="navbar bit-integrator-nav" id="navbar">
+                <div class="container flex flex-between">
+                    <div class="logo flex">
+                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                alt="file not found"></a>
+                    </div>
+                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                src="/Assets/images/cancel.svg" alt="file not found"></a>
+                        <a href="index.html">Integrations</a>
+
+                        <div class="nav-btn">
+                            <a href="index.html">Signup</a>
+                            <a href="index.html">Login</a>
+
+                        </div>
+                    </div>
+                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                        <i class="fas fa-bars" style="font-size:30px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </head>
+
+        <div class="integration-details mt-4">
+            <section class="showcase text-center">
+                <div class="container">
+                    <div class="integration-details-text">
+                        <h2>Google Sheet - Mailchimp Integration</h2>
+                    </div>
+                    <div class="integration">
+                        <div class="item-left card">
+                            <h3>Google Sheet</h3>
+                            <div class="details flex mt-1">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    All limited links
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="assets/images/integrations/googlesheet.svg" alt="file not found">
+
+                            </div>
+                        </div>
+
+                        <div class="item-right card">
+                            <h3>Mailchimp</h3>
+                            <div class="details flex mt-1">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    All limited links
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+
+                            <div class="details flex">
+                                <div class="icon">
+                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                </div>
+                                <div class="text">
+                                    Own analytics platform
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="assets/images/integrations/mailchimp.svg" alt="file not found">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="card">
+                            <div class="text">
+                                <span>
+                                    $5<span class="type">
+                                        /month
+                                    </span></span>
+
+                            </div>
+                            <div class="button">
+                                <a href=""><button type="button" class="btn btn-primary">Integrate</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support mt-5">
+                <div class="container grid grid-fr-1">
+                    <div class="card mt-5 text-center">
+                        <div class="card-item flex flex-center">
+                            <div class="live-chat">
+                                <img src="/assets/images/chat.svg" alt="file not found">
+                                <div class="content">
+                                    <h2>24/7 Live chat support
+
+                                    </h2>
+                                    <p> Ask any questions anytime.
+                                        We're ready to take on any WordPress
+                                        question</p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="/assets/images/support.svg" alt="file not found">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <%- include('../template/integrator-footer'); -%>
+
+        </div>
+
+        <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+            <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+        </button>
+
+        <%- include('../template/script'); -%>
+
+    </body>

@@ -1,0 +1,667 @@
+<%- include('../template/header'); -%>
+
+    <body>
+
+        <head>
+            <%- include('../template/topbar'); -%>
+
+                <div class="navbar bitform-nav" id="navbar">
+                    <div class="container flex flex-between">
+                        <div class="logo flex">
+                            <a href=""><img src="/Assets/images/bit_form_logo2.svg" alt="file not found"></a>
+                        </div>
+                        <div class="bitform-links links flex" id="bitform-links">
+                            <a href="javascript:void(0)" class="closebtn" onclick="bitFormCloseNav()"><img
+                                    src="/Assets/images/cancel.svg" alt="file not found"></a>
+                            <a href="index.html">Pricing</a>
+                            <a href="index.html">Documentation</a>
+                            <a href="index.html">Demo</a>
+                            <div class="nav-btn">
+                                <a href="index.html">Login</a>
+                            </div>
+                        </div>
+                        <div class="responsive-menu" onclick="resBitFormMenuActive()">
+                            <i class="fas fa-bars" style="font-size:30px;"></i>
+                        </div>
+                    </div>
+
+                </div>
+        </head>
+
+        <div class="bitform">
+            <section class="showcase">
+                <div class="container grid">
+                    <div class="showcase-text">
+                        <h1 class="flex">
+                            <span>Ultimate </span><span>Form Builder </span><span>In WordPress</span>
+                        </h1>
+
+                        <div class="desc grid grid-fr-2 mt-2">
+                            <div class="reviews">
+                                <div class="star flex">
+                                    <span>5 </span>
+                                    <span class="flex">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </span>
+                                </div>
+                                <div class="text flex">
+                                    <span>4 Reviews</span>
+                                </div>
+
+                            </div>
+                            <div class="downloads flex flex-column">
+                                <span>603+</span>
+                                <span>Downloads</span>
+                            </div>
+                        </div>
+                        <div class="button mt-1">
+                            <button type="button" class="btn">Lifetime Deal</button>
+                            <button type="button" class="btn btn-outline">Try Demo</button>
+                        </div>
+                    </div>
+                    <div class="showcase-video">
+                        <div class="image">
+                            <img src="/assets/images/new_form2.svg" alt="file not found">
+                            <a id="play-video" class="video-play-button" href="#">
+                                <span></span>
+                            </a>
+                            <div id="video-overlay" class="video-overlay">
+                                <a class="video-overlay-close">&times;</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="bitform-intro mt-4">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="intro-text ">
+                        <h2>Professional & Easy To Use WordPress Form Builder</h2>
+                        <p>Drag and Drop WordPress Form Builder will allow you to build any kind of forms for WordPress
+                            website that you can imagine. The Professional design of Bit Form keeps all the tools right
+                            where you want them! You can make integration among various CRM and application with no zero
+                            experience !</p>
+                    </div>
+                    <div class="intro-features">
+                        <div class="tab-menu br-1" id="tab-menu">
+                            <button class="btn intro-btn active" onclick="openTab(event,'tab0')">Conditional
+                                Logic</button>
+                            <button class="btn intro-btn" onclick="openTab(event,'tab1')">Build In Editor</button>
+                            <button class="btn intro-btn" onclick="openTab(event,'tab2')">Style-Editor</button>
+                            <button class="btn intro-btn" onclick="openTab(event,'tab3')">Response Management</button>
+                        </div>
+
+                        <div class="tab-content" id="tab0" style="display:block">
+                            <img src="/assets/images/conditional_logic2.png" alt="file not found">
+                        </div>
+                        <div class="tab-content" id="tab1">
+                            <img src="/assets/images/conditional_logic.png" alt="file not found">
+                        </div>
+                        <div class="tab-content" id="tab2">
+                            <img src="/assets/images/Built_in_style_editor.png" alt="file not found">
+                        </div>
+                        <div class="tab-content" id="tab3">
+                            <img src="/assets/images/conditional_logic.png" alt="file not found">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="features-text ">
+                        <h2>Build Complex Forms Easily
+                            With Powerful Features</h2>
+                    </div>
+                    <div class="features-items">
+                        <div class="grid grid-fr-3 not-responsive">
+
+                            <% Object.keys(features).map(item=> { %>
+
+                                <div class="feature-card card">
+                                    <div class="feature-img">
+                                        <img src=<%=features[item].img_url%>
+                                        alt="file not found">
+                                    </div>
+                                    <div class="feature-heading">
+                                        <h3>
+                                            <%=features[item].title%>
+                                        </h3>
+                                    </div>
+                                    <div class="feature-desc">
+
+                                        <p>
+                                            <%=features[item].desc%>
+                                        </p>
+                                    </div>
+                                    <div class="read-more">
+                                        <a href="">Learn More
+                                            <span><img src="./Assets/images/feature_arrow_right.svg"
+                                                    alt="file not found"></span>
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                                <% }) %>
+
+                        </div>
+
+                        <div class="grid grid-fr-3 responsive">
+                            <div class="splide features-slider">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <% Object.keys(features).map(item=> { %>
+                                            <li class="splide__slide">
+
+                                                <div class="feature-card card">
+                                                    <div class="feature-img">
+                                                        <img src=<%=features[item].img_url%>
+                                                        alt="file not found">
+                                                    </div>
+                                                    <div class="feature-heading">
+                                                        <h3>
+                                                            <%=features[item].title%>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="feature-desc">
+
+                                                        <p>
+                                                            <%=features[item].desc%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="read-more">
+                                                        <a href="">Learn More
+                                                            <span><img src="./Assets/images/feature_arrow_right.svg"
+                                                                    alt="file not found"></span>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <% }) %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-button flex flex-column">
+                        <button type="button" class="btn">Get Bit Form Now</button>
+                        <a href="">See All Features
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="integrations mt-2">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="integrations-text ">
+                        <h2>Integrations</h2>
+                        <p>Drag and Drop WordPress Form Builder will allow you to build any kind of forms for WordPress
+                            website that you can imagine. The Professional design of Bit Form keeps all the tools right
+                            where you want them! You can make integration among various CRM and application with no zero
+                            experience !</p>
+                    </div>
+                    <div class="integrations-image">
+                        <img src="/assets/images/integrations.svg" alt="file not found">
+                    </div>
+            </section>
+
+            <section class="pricing mt-2">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="pricing-text">
+                        <h2>Pricing</h2>
+                        <p>No contracts. No surprise fees.</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="price-menu" id="price-menu">
+                            <button class="btn price-btn">Lifetime</button>
+                        </div>
+
+                        <div class="price-content grid">
+                            <div class="pro">
+                                <div class="pro-text">
+                                    <h2>Pro</h2>
+                                    <p>Limtless possibilites</p>
+                                </div>
+
+                                <div class="pro-card card">
+                                    <div class="pro-heading">
+                                        <h3>
+                                            <span>$10</span>
+                                            <span>/month</span>
+                                        </h3>
+                                        <div class="titile">
+                                            <p>Try it as long as you like</p>
+                                        </div>
+                                    </div>
+                                    <div class="pro-desc flex flex-column mt-1">
+                                        <div class="details flex">
+                                            <div class="icon">
+                                                <img src="assets/images/pro_check.svg" alt="file not found">
+                                            </div>
+                                            <div class="text">
+                                                All limited links
+                                            </div>
+                                        </div>
+                                        <div class="details flex">
+                                            <div class="icon">
+                                                <img src="assets/images/pro_check.svg" alt="file not found">
+                                            </div>
+                                            <div class="text">
+                                                Own analytics platform
+                                            </div>
+                                        </div>
+                                        <div class="details flex">
+                                            <div class="icon">
+                                                <img src="assets/images/pro_check.svg" alt="file not found">
+                                            </div>
+                                            <div class="text">
+                                                Chat support
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pro-button mt-1">
+                                        <button type="button" class="btn">Buy Now</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="agency">
+                                <div class="agency-text">
+                                    <h2>Agency</h2>
+                                    <p>Limtless possibilites</p>
+                                </div>
+
+                                <div class="agency-card card">
+                                    <div class="agency-heading">
+                                        <h3>
+                                            <span>$10</span>
+                                            <span>/month</span>
+                                        </h3>
+                                        <div class="titile">
+                                            <p>Try it as long as you like</p>
+                                        </div>
+                                    </div>
+                                    <div class="agency-desc flex mt-1">
+                                        <div class="left">
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+                                                </div>
+                                                <div class="text">
+                                                    All limited links
+                                                </div>
+                                            </div>
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+
+                                                </div>
+                                                <div class="text">
+                                                    Own analytics platform
+                                                </div>
+                                            </div>
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+                                                </div>
+                                                <div class="text">
+                                                    Chat support
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="right">
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+                                                </div>
+                                                <div class="text">
+                                                    All limited links
+                                                </div>
+                                            </div>
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+
+                                                </div>
+                                                <div class="text">
+                                                    Optimize hashtags
+                                                </div>
+                                            </div>
+                                            <div class="details flex">
+                                                <div class="icon">
+                                                    <img src="assets/images/agency_check.svg" alt="file not found">
+                                                </div>
+                                                <div class="text">
+                                                    Own analytics platform
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="agency-button mt-1">
+                                        <button type="button" class="btn">Buy Now</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="clients my-2 py-2">
+                <div class="clients-text text-center mb-5">
+                    <h2><span>What Our </span><span>Client Says</span></h2>
+                    <p>No contracts. No surprise fees.</p>
+                </div>
+                <div class="splide clients-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faqs">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="faqs-text">
+                        <h2>FAQ'S</h2>
+                        <p>Frequently asked question about Bit Form</p>
+                    </div>
+                    <div class="faq-box card">
+                        <div class="faq-wrapper">
+
+                            <button class="faq-toggle"><i class="fas fa-plus fa-icon"><span>How can I pay
+                                        Directly</span></i></button>
+
+                            <div class="faq-content">
+                                <p class="contentText ">
+                                    <img src="/Assets/images/faq_line.svg" alt="file not found">
+
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Laboriosam, unde molestiae! Sit laboriosam nisi minus, accusamus sapiente cumque
+                                    tenetur mollitia voluptate quis provident dolores facilis ad, omnis cupiditate
+                                    temporibus repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    .
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="faq-wrapper">
+                            <button class="faq-toggle"><i class="fas fa-plus fa-icon"><span>What is the return
+                                        Policy?</span></i></button>
+                            <div class="faq-content">
+                                <p class="contentText">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Laboriosam, unde molestiae! Sit laboriosam nisi minus, accusamus sapiente cumque
+                                    tenetur mollitia voluptate quis provident dolores facilis ad, omnis cupiditate
+                                    temporibus repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    .</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper">
+                            <button class="faq-toggle"><i class="fas fa-plus fa-icon"><span>What is the return
+                                        Policy?</span></i></button>
+                            <div class="faq-content">
+                                <p class="contentText">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Laboriosam, unde molestiae! Sit laboriosam nisi minus, accusamus sapiente cumque
+                                    tenetur mollitia voluptate quis provident dolores facilis ad, omnis cupiditate
+                                    temporibus repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    .</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support mt-5">
+                <div class="container grid grid-fr-1">
+                    <div class="card mt-5 text-center">
+                        <div class="card-item flex flex-center">
+
+                            <div class="live-chat">
+                                <img src="/assets/images/chat.svg" alt="file not found">
+                                <div class="content">
+                                    <h3>24/7 Live chat support
+
+                                    </h3>
+                                    <p> Ask any questions anytime.
+                                        We're ready to take on any WordPress
+                                        question</p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="/assets/images/support.svg" alt="file not found">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+                <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+            </button>
+
+
+
+            <%- include('../template/bitform-footer'); -%>
+
+        </div>
+        <%- include('../template/script'); -%>
+            <script src="/Assets/js/stickyNav.js"></script>
+            <script>
+                new Splide('.clients-slider', {
+                    type: 'loop',
+                    perPage: 4,
+                    perMove: 1,
+                    speed: 500,
+                    interval: 5000,
+                    arrows: false,
+                    padding: {
+                        left: 0,
+                        right: '9rem',
+                    },
+                    autoplay: true,
+                    interval: 5000,
+                    breakpoints: {
+                        '1200': {
+                            perPage: 4,
+                            perMove: 1,
+                            padding: {
+                                left: 0,
+                                right: 0,
+                            },
+
+                        },
+                        '1060': {
+                            perPage: 3,
+                        },
+                        '790': {
+                            perPage: 2,
+                            perMove: 1,
+                            padding: {
+                                left: 0,
+                                right: 0,
+                            },
+
+                        },
+                        '600': {
+                            perPage: 1,
+                            perMove: 1,
+
+                        },
+
+                    }
+                }).mount();
+            </script>
+
+            <script>
+                new Splide('.features-slider', {
+                    perPage: 2,
+                    type: "loop",
+                    perMove: 1,
+                    speed: 500,
+                    interval: 5000,
+                    arrows: false,
+                    autoplay: true,
+                    breakpoints: {
+                        654: {
+                            perPage: 1,
+                        },
+                    }
+
+                }).mount();
+            </script>
+    </body>

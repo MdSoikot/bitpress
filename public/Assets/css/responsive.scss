@@ -1,0 +1,1016 @@
+@mixin flex($direction, $j_content) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $j_content;
+  align-items: center;
+}
+
+@media (max-width: 958px) {
+  .top-bar {
+    .links {
+      display: flex !important;
+    }
+  }
+
+  .navbar {
+    .container {
+      padding: 0 40px;
+    }
+    .links {
+      display: none;
+      a {
+        color: #6c6868;
+        padding: 8px 0;
+        &:hover {
+          color: #fff;
+        }
+        img {
+          width: 11px;
+          height: 11px;
+        }
+      }
+      .closebtn {
+        @include flex(row, center);
+        position: absolute;
+        top: 10px;
+        right: 13px;
+        margin-left: 50px;
+        background-color: #78797a;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        color: #fff;
+        opacity: 0.8;
+        transition: 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .responsive-menu {
+      display: block;
+      cursor: pointer;
+    }
+    .sidebar {
+      @include flex(column, end);
+      z-index: 100;
+      width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      transition: all 2s;
+      padding-top: 53px;
+    }
+    .nav-btn {
+      @include flex(column, center);
+      margin-top: 10px;
+      a {
+        padding: 5px 30px;
+        &:first-child {
+          margin-bottom: 10px;
+          margin-right: 0;
+          color: #fff;
+          border: 1px solid #ff4655;
+        }
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .bit-integrator-nav {
+    .nav-btn {
+      a {
+        &:first-child {
+          border: 1px solid #ff4655;
+        }
+        &:last-child {
+          background: linear-gradient(180deg, #4672ee 0.63%, #214eec 100%) !important;
+          border: 1px solid #214eec;
+        }
+      }
+    }
+  }
+
+  .bitform {
+    .showcase {
+      .showcase-text {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        margin-top: 0;
+        h1 {
+          align-items: center;
+        }
+        .desc {
+          margin: auto;
+        }
+        .button {
+          text-align: center;
+        }
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    p {
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    .showcase {
+      .container {
+        padding: 0 120px;
+      }
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+      .showcase-text {
+        text-align: center;
+      }
+    }
+    .products {
+      .container {
+        padding: 0 120px;
+        .products-text {
+          width: 100%;
+        }
+      }
+      .products-items {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 20px 100px;
+          .flex {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    .worldwide {
+      .worldwide-text {
+        width: 550px;
+      }
+      .world-map {
+        width: 600px;
+      }
+    }
+  }
+
+  .bitform {
+    .container {
+      padding: 0 120px;
+    }
+    .intro-text {
+      width: 100%;
+      p {
+        font-size: 13px;
+      }
+    }
+    .video-overlay iframe {
+      width: 90%;
+    }
+    .integrations {
+      .integrations-text {
+        width: 100%;
+        p {
+          font-size: 13px;
+        }
+      }
+      img {
+        width: 250px !important;
+      }
+    }
+
+    .pricing {
+      .pricing-features {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .text {
+        font-size: 11px;
+      }
+      .pro {
+        width: 300px;
+        margin: auto;
+      }
+      .pro-text {
+        text-align: center;
+      }
+      .agency {
+        width: 400px;
+        margin: auto;
+      }
+
+      .agency-desc {
+        justify-content: space-between;
+        .left {
+          margin-right: 30px;
+        }
+      }
+      .agency-text {
+        text-align: center;
+      }
+    }
+    .support {
+      .card {
+        .card-item {
+          margin: 0px 115px;
+        }
+        width: 700px;
+        margin: auto;
+        text-align: center;
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 13px;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .bit-integrator {
+    .showcase {
+      .grid {
+        grid-gap: 0;
+      }
+    }
+
+    .showcase-text {
+      h1 {
+        font-size: 25px;
+      }
+    }
+    .showcase-image {
+      img {
+        width: 500px;
+      }
+    }
+
+    .footer-logo {
+      img {
+        height: 70px !important;
+      }
+    }
+  }
+  .glance {
+    h3 {
+      font-size: 20px !important;
+    }
+    .card {
+      max-width: 580px !important;
+    }
+  }
+  .support {
+    .card {
+      .card-item {
+        margin: 0px 115px;
+      }
+      width: 700px;
+      margin: auto;
+      text-align: center;
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+  .top-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .support {
+    .card {
+      width: 600px !important;
+      .card-item {
+        margin: 0px 40px !important;
+      }
+    }
+  }
+
+  .glance {
+    .card {
+      max-width: 420px !important;
+    }
+  }
+
+  .bitform {
+    .support {
+      .card {
+        width: 600px !important;
+        .card-item {
+          margin: 0px 40px !important;
+        }
+      }
+    }
+  }
+  .integration-details {
+    .showcase,
+    .container {
+      padding: 0;
+    }
+    .integration {
+      grid-template-columns: 1fr !important;
+      width: 300px;
+    }
+    .item-left,
+    .item-right {
+      margin: auto;
+    }
+    .item-right {
+      margin-top: 40px;
+    }
+  }
+
+  .integration-request {
+    .integration-request-text {
+      width: 300px;
+    }
+    .integration-image {
+      width: 500px;
+    }
+    .request-form {
+      width: 500px;
+      .last {
+        margin: 20px 35px;
+      }
+    }
+    textarea {
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 654px) {
+  .homepage {
+    .products {
+      .container {
+        padding: 0 80px;
+      }
+      .products-items {
+        .grid {
+          padding: 0 !important;
+        }
+        .not-responsive {
+          display: none;
+        }
+        .responsive {
+          display: block;
+          .product-img {
+            @include flex(row, center);
+          }
+        }
+      }
+    }
+  }
+  .bitform {
+    .features {
+      .features-items {
+        .grid {
+          padding: 0 !important;
+        }
+        .not-responsive {
+          display: none;
+        }
+        .responsive {
+          display: block !important;
+        }
+      }
+    }
+    .faqs {
+      .card {
+        width: 580px !important;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    .container {
+      padding: 0 !important;
+    }
+  }
+  .homepage {
+    .showcase {
+      .container {
+        padding: 0 80px;
+      }
+    }
+
+    .reviews {
+      .splide-item {
+        margin: 10px auto 10px auto !important;
+      }
+    }
+
+    .worldwide {
+      .world-map {
+        width: 500px !important;
+      }
+    }
+  }
+
+  .bitform {
+    .showcase-text {
+      h1 {
+        font-size: 30px !important;
+      }
+      .desc {
+        width: 220px !important;
+      }
+    }
+    .intro-text {
+      width: 450px !important;
+    }
+    .bitform-intro {
+      margin-top: 0 !important;
+      .tab-menu {
+        width: 450px;
+      }
+      .btn {
+        padding: 8px 10px;
+        font-size: 11px;
+      }
+      img {
+        width: 500px;
+        height: 345px;
+      }
+    }
+
+    .features {
+      .feature-button {
+        .btn {
+          padding: 8px 20px;
+          font-size: 11px;
+        }
+        a {
+          font-size: 11px;
+        }
+      }
+    }
+    .integrations {
+      .integrations-text {
+        width: 450px !important;
+      }
+    }
+    .clients {
+      .splide-item {
+        margin: 10px auto 10px auto !important;
+      }
+    }
+    .faqs {
+      .card {
+        width: 480px !important;
+      }
+      .faq-content p {
+        padding: 2px 20px 15px 20px;
+      }
+    }
+    .support {
+      .card {
+        width: 500px !important;
+        .card-item {
+          @include flex(column, center);
+          margin: 0px 100px !important;
+        }
+        .live-chat {
+          @include flex(column, center);
+          text-align: center;
+          .content {
+            @include flex(column, center);
+          }
+        }
+      }
+    }
+  }
+
+  .integration-details {
+    .price {
+      width: 500px;
+    }
+  }
+  .integration-request {
+    .integration-image {
+      width: 400px;
+    }
+    .request-form {
+      width: 400px;
+      .last {
+        margin: 20px 26px;
+      }
+    }
+    input {
+      width: 150px;
+    }
+  }
+
+  .support {
+    .card {
+      width: 500px !important;
+      .card-item {
+        @include flex(column, center);
+        margin: 0px 100px !important;
+      }
+      .live-chat {
+        @include flex(column, center);
+        text-align: center;
+        .content {
+          @include flex(column, center);
+        }
+      }
+    }
+  }
+  footer {
+    .grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .company {
+      margin-top: -173px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 20px !important;
+  }
+  .navbar {
+    .container {
+      padding: 0 20px;
+    }
+    .logo {
+      img {
+        width: 100px !important;
+        height: 30px !important;
+      }
+    }
+    i {
+      font-size: 24px !important;
+    }
+  }
+  .homepage {
+    .showcase {
+      .container {
+        padding: 0 40px;
+      }
+    }
+    .products {
+      .container {
+        padding: 0 40px;
+      }
+    }
+    .worldwide {
+      .world-map {
+        width: 400px !important;
+      }
+    }
+  }
+  .bitform {
+    .showcase-video {
+      .image {
+        width: 400px !important;
+      }
+      img {
+        width: 100% !important;
+      }
+    }
+    .intro-text {
+      width: 400px !important;
+    }
+    .bitform-intro {
+      .tab-menu {
+        width: 400px;
+      }
+      .btn {
+        padding: 8px 8px;
+        font-size: 10px;
+      }
+      img {
+        width: 400px;
+        height: 275px !important;
+      }
+    }
+    .integrations {
+      .integrations-text {
+        width: 400px !important;
+      }
+    }
+
+    .faqs {
+      .card {
+        width: 390px !important;
+      }
+    }
+    .support {
+      .card {
+        width: 400px !important;
+      }
+      .image {
+        display: none;
+      }
+    }
+  }
+
+  .bit-integrator {
+    .showcase-image {
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    }
+    footer {
+      h3 {
+        font-size: 18px !important;
+      }
+      .menu {
+        font-size: 12px;
+      }
+      .footer-logo {
+        img {
+          height: 50px !important;
+        }
+      }
+      .footer-product {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .all-integrations {
+    footer {
+      h3 {
+        font-size: 18px !important;
+      }
+      .menu {
+        font-size: 12px;
+      }
+      .footer-logo {
+        img {
+          height: 50px !important;
+        }
+      }
+      .footer-product {
+        margin-top: 0px;
+      }
+    }
+  }
+  .integration-details {
+    .price {
+      width: 400px;
+    }
+  }
+  .integration-list {
+    h3 {
+      font-size: 20px;
+    }
+    input {
+      width: 200px;
+    }
+    .integration-item {
+      width: 300px;
+      padding: 15px 30px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    .image {
+      width: 40px;
+      height: 40px;
+    }
+    .title {
+      font-size: 12px;
+    }
+    .price {
+      margin-top: -14px;
+      span:first-child {
+        font-weight: 600;
+        font-size: 26px;
+      }
+    }
+  }
+
+  .find-integration {
+    width: 300px !important;
+    padding: 15px 30px;
+    .btn {
+      padding: 10px 32px !important;
+    }
+  }
+
+  .integration-request {
+    .integration-image {
+      width: 300px;
+    }
+    .request-form {
+      width: 300px;
+      .last {
+        margin: 0px;
+      }
+    }
+    input {
+      width: 213px;
+      margin-bottom: 10px;
+    }
+    .first {
+      flex-direction: column;
+      align-items: center;
+    }
+    textarea {
+      height: 120px;
+      width: 213px;
+      margin: auto;
+    }
+    .button {
+      width: 213px;
+      margin: auto;
+    }
+  }
+  .glance {
+    .grid {
+      grid-gap: 0;
+    }
+    h3 {
+      font-size: 17px;
+    }
+    .card {
+      max-width: 320px !important;
+      .glance-items {
+        padding: 0;
+        .item-img {
+          width: 25px;
+          height: 25px;
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+        .item-heading {
+          font-size: 12px;
+        }
+        .item-desc {
+          width: 60px;
+          p {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+  .support {
+    .card {
+      width: 400px !important;
+    }
+    .image {
+      display: none;
+    }
+    .content {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  footer {
+    .grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+      justify-items: center;
+    }
+    .flex {
+      @include flex(column, center);
+      text-align: center;
+    }
+
+    .product {
+      margin-top: -80px;
+    }
+    .company {
+      margin-top: 0px;
+    }
+    .social-media {
+      .flex {
+        flex-direction: row !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage {
+    p {
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    .worldwide {
+      .worldwide-text {
+        width: 300px !important;
+      }
+      .world-map {
+        width: 330px !important;
+      }
+    }
+  }
+  .bitform {
+    .showcase-video {
+      .image {
+        width: 350px !important;
+      }
+    }
+    .intro-text {
+      width: 300px !important;
+      p {
+        font-size: 13px;
+      }
+    }
+    .bitform-intro {
+      .tab-menu {
+        width: 300px;
+      }
+      img {
+        width: 350px;
+        height: 240px !important;
+      }
+    }
+
+    .features {
+      .features-text {
+        width: 300px !important;
+      }
+    }
+    .integrations {
+      .integrations-text {
+        width: 300px !important;
+      }
+    }
+    .pricing {
+      .agency {
+        width: 300px !important;
+        .icon {
+          width: 17px;
+          height: 17px;
+          img {
+            width: 10px;
+            height: 10px;
+          }
+        }
+        .left {
+          margin-right: 0 !important;
+        }
+      }
+    }
+    .faqs {
+      .card {
+        width: 300px !important;
+        padding: 20px 10px;
+      }
+      .faq-wrapper {
+        padding: 0 3px;
+      }
+      .faq-toggle {
+        padding: 20px 0px;
+      }
+    }
+    .support {
+      .card {
+        width: 300px !important;
+        .card-item {
+          @include flex(column, center);
+          margin: 0px 60px !important;
+        }
+        .live-chat {
+          @include flex(column, center);
+          text-align: center;
+          .content {
+            @include flex(column, center);
+          }
+        }
+      }
+    }
+  }
+
+  .bit-integrator {
+    .showcase-image {
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    .showcase-text {
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 12px;
+        width: 300px;
+      }
+    }
+  }
+  .integration-details {
+    .price {
+      width: 300px;
+      .card {
+        flex-direction: column;
+        .text {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .integration-item {
+    width: 250px !important;
+    padding: 15px 10px !important;
+  }
+  .integration-list {
+    h3 {
+      font-size: 17px;
+    }
+  }
+
+  .find-integration {
+    h3 {
+      font-size: 11px !important;
+    }
+    width: 250px !important;
+    .btn {
+      padding: 10px 13px !important;
+      font-size: 11px !important;
+    }
+  }
+
+  .integration-request {
+    .integration-request-text {
+      width: 250px;
+    }
+    .integration-image {
+      width: 100%;
+    }
+    .request-form {
+      width: 100%;
+    }
+    textarea {
+      width: 213px;
+      height: 100px;
+    }
+  }
+
+  .glance {
+    .container {
+      padding: 0 20px;
+    }
+    .card {
+      max-width: 280px !important;
+    }
+  }
+  .support {
+    .card {
+      width: 300px !important;
+      .card-item {
+        @include flex(column, center);
+        margin: 0px 60px !important;
+      }
+      .live-chat {
+        @include flex(column, center);
+        text-align: center;
+        .content {
+          @include flex(column, center);
+        }
+      }
+    }
+  }
+}

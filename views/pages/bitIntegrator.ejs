@@ -1,0 +1,159 @@
+<%- include('../template/header'); -%>
+
+    <body>
+
+        <head>
+            <%- include('../template/topbar'); -%>
+
+                <div class="navbar bit-integrator-nav" id="navbar">
+                    <div class="container flex flex-between">
+                        <div class="logo flex">
+                            <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                    alt="file not found"></a>
+                        </div>
+                        <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                            <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                    src="/Assets/images/cancel.svg" alt="file not found"></a>
+                            <a href="index.html">Integrations</a>
+
+                            <div class="nav-btn">
+                                <a href="index.html">Signup</a>
+                                <a href="index.html">Login</a>
+
+                            </div>
+                        </div>
+                        <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                            <i class="fas fa-bars" style="font-size:30px;"></i>
+                        </div>
+                    </div>
+
+                </div>
+        </head>
+
+        <div class="bit-integrator mt-6">
+            <section class="showcase">
+                <div class="container grid grid-fr-1 text-center">
+                    <div class="showcase-text">
+                        <h1>Connect Your Business Apps</h1>
+                        <p>It integrates popular SaaS/Cloud Apps at Business
+                            Processes level and Data level</p>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="/assets/images/integrator-intro.svg" alt="file not found">
+                    </div>
+
+                </div>
+            </section>
+            <section class="integration-list text-center">
+                <div class="container">
+                    <div class="integration-list-text text-center">
+                        <h2>Our Popular Integration</h2>
+                    </div>
+                    <div class="search-bar flex flex-center mt-1">
+                        <input type="text" placeholder="Search your integration" onkeyup="handleChange(event)">
+                    </div>
+                    <%Object.keys(integrations).map(item=>{%>
+                        <a href="integration-details">
+                            <div class="integration-item">
+
+                                <div class="item item-left">
+                                    <div class="image">
+                                        <img src=<%=integrations[item].img_url_left%> alt="file not found">
+                                    </div>
+                                    <div class="title">
+                                        <%=integrations[item].desc.title1%>
+                                    </div>
+                                </div>
+
+                                <div class="price">
+                                    <span>
+                                        <%=integrations[item].subscription.price%>
+                                    </span>
+                                    <span>
+                                        <%=integrations[item].subscription.type%>
+                                    </span>
+                                </div>
+                                <div class="item item-right">
+                                    <div class="image">
+                                        <img src=<%=integrations[item].img_url_right%> alt="file not found">
+                                    </div>
+                                    <div class="title">
+                                        <%=integrations[item].desc.title2%>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <%})%>
+                            <a href="all-integrations"><button type="button" class="btn btn-primary">See all
+                                    integration</button></a>
+                </div>
+            </section>
+            <section class="glance">
+                <div class="container">
+                    <div class="card  text-center">
+                        <h3>Bit Integrator at A Glance</h3>
+                        <div class="glance-items grid grid-fr-4 mt-3">
+                            <% Object.keys(glance_item_integrator).map(item=> { %>
+                                <div class="item">
+                                    <div class="item-img flex flex-center br-full">
+                                        <img src=<%=glance_item_integrator[item].img_url%>
+                                        alt="file not found">
+                                    </div>
+                                    <div class="item-heading mt-1">
+                                        <%=glance_item_integrator[item].title%>
+                                    </div>
+                                    <div class="item-desc">
+                                        <p>
+                                            <%=glance_item_integrator[item].desc%>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="support mt-10">
+                <div class="container grid grid-fr-1">
+                    <div class="card mt-5 text-center">
+                        <div class="card-item flex flex-center">
+                            <div class="live-chat">
+                                <img src="/assets/images/chat.svg" alt="file not found">
+                                <div class="content">
+                                    <h2>24/7 Live chat support
+
+                                    </h2>
+                                    <p> Ask any questions anytime.
+                                        We're ready to take on any WordPress
+                                        question</p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="/assets/images/support.svg" alt="file not found">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+                <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+            </button>
+
+            <%- include('../template/integrator-footer'); -%>
+
+
+        </div>
+        <script>
+            const handleChange = (e) => {
+                console.log(e.target.value);
+            }
+
+        </script>
+        <%- include('../template/script'); -%>
+
+    </body>

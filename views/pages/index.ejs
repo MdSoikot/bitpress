@@ -1,0 +1,278 @@
+<%- include('../template/header'); -%>
+
+  <body style="background-color: #f2f4ff">
+    <%- include('../template/nav'); -%>
+
+      <div class="homepage">
+        <section class="showcase  mt-8">
+          <div class="container grid">
+            <div class="showcase-text">
+              <h1>Afforbable
+                Software For Your Business </h1>
+              <p>An innovative technology platform for your business with a power pack collection of Wordpress plugins ,
+                integration tools, cloud software & many more. Bit Apps is meant for providing the most advanced
+                Wordpress plugin and integration tool provider.</p>
+            </div>
+            <div class="showcase-img">
+              <img src="Assets/images/bitpress_illustration 1.png" alt="file not found">
+            </div>
+          </div>
+        </section>
+
+        <section class="products mt-2">
+          <div class="container grid grid-fr-1">
+            <div class="products-text text-center">
+              <h2><span>Our </span><span>Products</span></h2>
+              <p>An innovative technology platform for your business with a power pack collection of Wordpress plugins ,
+                integration tools, cloud software & many more. Bit Apps is meant for providing the most advanced
+                Wordpress plugin and integration tool provider.
+              </p>
+            </div>
+          </div>
+          <div class="products-items">
+            <div class="grid not-responsive grid-fr-5">
+              <% Object.keys(products_card).map(item=> { %>
+                <div class="product-card card text-center <%=products_card[item].class%>">
+                  <div class="product-img">
+                    <img src=<%=products_card[item].img_url%>
+                    alt="file not found">
+                  </div>
+                  <div class="product-heading">
+                    <h4 class='mt-2'>
+                      <%=products_card[item].title%>
+                    </h4>
+                  </div>
+                  <div class="product-desc">
+
+                    <p>
+                      <%=products_card[item].desc%>
+                    </p>
+                  </div>
+                  <div class="read-more mt-8">
+                    <a href="">Read More
+                      <span><img src="./Assets/images/arrow.svg" alt="file not found"></span>
+
+                    </a>
+
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+
+            <div class="grid responsive">
+              <div class="splide product-slider">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <% Object.keys(products_card).map(item=> { %>
+                      <li class="splide__slide">
+                        <div class="product-card card <%=products_card[item].class%>">
+                          <div class="product-img">
+                            <img src=<%=products_card[item].img_url%>
+                            alt="file not found">
+                          </div>
+                          <div class="product-heading">
+                            <h4 class="mt-2">
+                              <%=products_card[item].title%>
+                            </h4>
+                          </div>
+                          <div class="product-desc">
+                            <p>
+                              <%=products_card[item].desc%>
+                            </p>
+                          </div>
+                          <div class="read-more mt-8">
+                            <a href="">Read More
+                              <span><img src="./Assets/images/arrow.svg" alt="file not found"></span>
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+                      <% }) %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="glance">
+          <div class="container">
+            <div class="card text-center br-4">
+              <h3><span>Bit Apps </span><span>at A Glance</span></h3>
+              <div class="glance-items grid grid-fr-4 mt-8">
+                <% Object.keys(glance_item).map(item=> { %>
+                  <div class="item">
+                    <div class="item-img flex flex-center br-full">
+                      <img src=<%=glance_item[item].img_url%>
+                      alt="file not found">
+                    </div>
+                    <div class="item-heading mt-2">
+                      <h4>
+                        <%=glance_item[item].title%>
+                      </h4>
+
+                    </div>
+                    <div class="item-desc">
+                      <p>
+                        <%=glance_item[item].desc%>
+                      </p>
+
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="reviews my-2 py-2">
+          <div class="splide reviews-slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <% Object.keys(homepage_reviews).map(item=>{%>
+                  <li class="splide__slide">
+                    <div class="splide-item card">
+                      <div class="rating">
+                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                      </div>
+                      <div class="profile-section mt-4">
+                        <div class="image">
+                          <img src=<%=homepage_reviews[item].profile_img%> alt="file not found" />
+                        </div>
+                        <div class="title">
+                          <h4>
+                            <%=homepage_reviews[item].client_name%>
+                          </h4>
+                          <p>@hello</p>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p>
+                          <%=homepage_reviews[item].content%><span><a href="#">Read more</a></span>
+                        </p>
+                      </div>
+                      <div class="icons mt-3">
+                        <img src="/assets/images/bit_form_logo.png" alt="file not found" />
+                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+
+                      </div>
+                    </div>
+                  </li>
+                  <%})%>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="worldwide">
+          <div class="container grid grid-fr-1">
+            <div class="worldwide-text text-center mt-5">
+              <h2><span>Our Customers </span><span>Worldwide</span></h2>
+            </div>
+            <div class="world-map">
+              <img src="/assets/images/World_Map.png" alt="file not found">
+            </div>
+          </div>
+        </section>
+
+        <section class="support mt-5">
+          <div class="container grid grid-fr-1">
+            <div class="card mt-5 text-center">
+              <div class="card-item flex flex-center">
+
+                <div class="live-chat">
+                  <img src="/assets/images/chat.svg" alt="file not found">
+                  <div class="content">
+                    <h3>24/7 Live chat support
+
+                    </h3>
+                    <p> Ask any questions anytime.
+                      We're ready to take on any WordPress
+                      question</p>
+                  </div>
+
+                </div>
+                <div class="image">
+                  <img src="/assets/images/support.svg" alt="file not found">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+          <img src="/assets/images/up-arrow.svg" alt="file not found">
+        </button>
+
+        <%- include('../template/footer'); -%>
+          <%- include('../template/script'); -%>
+            <script src="/Assets/js/scrollBtn.js"></script>
+
+
+            <script>
+              new Splide('.reviews-slider', {
+                type: 'loop',
+                perPage: 4,
+                perMove: 1,
+                speed: 500,
+                interval: 5000,
+                arrows: false,
+                padding: {
+                  left: 0,
+                  right: '9rem',
+                },
+                // arrows:false,
+                // autoplay: true,
+                interval: 5000,
+                breakpoints: {
+                  '1200': {
+                    perPage: 4,
+                    perMove: 1,
+                    padding: {
+                      left: 0,
+                      right: 0,
+                    },
+
+                  },
+                  '1060': {
+                    perPage: 3,
+                  },
+                  '790': {
+                    perPage: 2,
+                    perMove: 1,
+                    padding: {
+                      left: 0,
+                      right: 0,
+                    },
+
+                  },
+                  '600': {
+                    perPage: 1,
+                    perMove: 1,
+
+                  },
+
+                }
+              }).mount();
+            </script>
+
+            <script>
+              new Splide('.product-slider', {
+                perPage: 2,
+                type: "loop",
+                perMove: 1,
+                speed: 500,
+                interval: 5000,
+                arrows: false,
+                // autoplay: true,
+                breakpoints: {
+                  654: {
+                    perPage: 1,
+                  },
+                }
+
+              }).mount();
+            </script>
+
+  </body>

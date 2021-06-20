@@ -1,0 +1,106 @@
+.navbar {
+    height: 70px;
+    padding: 10px 20px;
+    .logo {
+        img {
+            width: 120px;
+            height: 29px;
+        }
+    }
+    .links {
+        a {
+            padding: 0px 10px;
+            color: var(--nav-color);
+            font-size: 14px;
+        }
+        .closebtn {
+            display: none;
+        }
+    }
+    .nav-btn {
+        a {
+            padding: 4px 30px;
+            border-radius: 8px;
+            border: 1px solid var(--red-primary);
+            &:first-child {
+                font-weight: bold;
+                color: #17283f;
+                margin-right: 10px;
+            }
+            &:last-child {
+                background-color: var(--red-primary);
+                color: #fff;
+            }
+        }
+    }
+    .responsive-menu {
+        display: none;
+    }
+}
+
+.bitform-nav {
+    box-shadow: 0 4px 6px -2px #dfdfdf;
+    height: 60px;
+    .container {
+        padding: 0 100px;
+    }
+    img {
+        height: 30px !important;
+    }
+    .nav-btn {
+        a {
+            border: 1px solid #214eec;
+            padding: 6px 35px;
+            &:last-child {
+                background: linear-gradient(180deg, #4672ee 0.63%, #214eec 100%);
+            }
+        }
+    }
+}
+
+.bit-integrator-nav {
+    box-shadow: 0 4px 6px -2px #dfdfdf;
+    height: 60px;
+    .container {
+        padding: 0 100px;
+    }
+    img {
+        height: 30px !important;
+        width: 160px!important;
+    }
+    
+    .nav-btn {
+        a {
+            padding: 6px 35px;
+            &:first-child {
+                border: 1px solid var(--btn-outline);
+            }
+            &:last-child {
+                background: #000;
+                border: 1px solid #000;
+            }
+        }
+    }
+}
+
+.top-bar {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+    .navbar {
+        padding: 10px 20px;
+        .flex {
+            gap: 10px;
+        }
+        .logo {
+            img {
+                width: 70px;
+                height: 18px;
+            }
+        }
+        .links a {
+            font-size: 12px;
+        }
+    }
+}

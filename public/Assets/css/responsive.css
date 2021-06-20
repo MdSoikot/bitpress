@@ -1,0 +1,1014 @@
+@media (max-width: 958px) {
+  .top-bar .links {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .navbar .container {
+    padding: 0 40px;
+  }
+  .navbar .links {
+    display: none;
+  }
+  .navbar .links a {
+    color: #6c6868;
+    padding: 8px 0;
+  }
+  .navbar .links a:hover {
+    color: #fff;
+  }
+  .navbar .links a img {
+    width: 11px;
+    height: 11px;
+  }
+  .navbar .links .closebtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    margin-left: 50px;
+    background-color: #78797a;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    color: #fff;
+    opacity: 0.8;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navbar .links .closebtn:hover {
+    opacity: 1;
+  }
+  .navbar .responsive-menu {
+    display: block;
+    cursor: pointer;
+  }
+  .navbar .sidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 100;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    padding-top: 53px;
+  }
+  .navbar .nav-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10px;
+  }
+  .navbar .nav-btn a {
+    padding: 5px 30px;
+  }
+  .navbar .nav-btn a:first-child {
+    margin-bottom: 10px;
+    margin-right: 0;
+    color: #fff;
+    border: 1px solid #ff4655;
+  }
+  .navbar .nav-btn a:last-child {
+    border: none;
+  }
+  .bit-integrator-nav .nav-btn a:first-child {
+    border: 1px solid #ff4655;
+  }
+  .bit-integrator-nav .nav-btn a:last-child {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.63%, #4672ee), to(#214eec)) !important;
+    background: linear-gradient(180deg, #4672ee 0.63%, #214eec 100%) !important;
+    border: 1px solid #214eec;
+  }
+  .bitform .showcase .showcase-text {
+    margin-top: 0;
+  }
+  .bitform .showcase .showcase-text .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .bitform .showcase .showcase-text h1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .bitform .showcase .showcase-text .desc {
+    margin: auto;
+  }
+  .bitform .showcase .showcase-text .button {
+    text-align: center;
+  }
+  .bitform .showcase .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage p {
+    font-size: 13px;
+  }
+  .homepage h1 {
+    font-size: 35px;
+  }
+  .homepage h2 {
+    font-size: 30px;
+  }
+  .homepage h3 {
+    font-size: 20px;
+  }
+  .homepage .showcase .container {
+    padding: 0 120px;
+  }
+  .homepage .showcase .grid {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  .homepage .showcase .showcase-text {
+    text-align: center;
+  }
+  .homepage .products .container {
+    padding: 0 120px;
+  }
+  .homepage .products .container .products-text {
+    width: 100%;
+  }
+  .homepage .products .products-items .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 20px 100px;
+  }
+  .homepage .products .products-items .grid .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .homepage .worldwide .worldwide-text {
+    width: 550px;
+  }
+  .homepage .worldwide .world-map {
+    width: 600px;
+  }
+  .bitform .container {
+    padding: 0 120px;
+  }
+  .bitform .intro-text {
+    width: 100%;
+  }
+  .bitform .intro-text p {
+    font-size: 13px;
+  }
+  .bitform .video-overlay iframe {
+    width: 90%;
+  }
+  .bitform .integrations .integrations-text {
+    width: 100%;
+  }
+  .bitform .integrations .integrations-text p {
+    font-size: 13px;
+  }
+  .bitform .integrations img {
+    width: 250px !important;
+  }
+  .bitform .pricing .pricing-features .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .bitform .pricing .text {
+    font-size: 11px;
+  }
+  .bitform .pricing .pro {
+    width: 300px;
+    margin: auto;
+  }
+  .bitform .pricing .pro-text {
+    text-align: center;
+  }
+  .bitform .pricing .agency {
+    width: 400px;
+    margin: auto;
+  }
+  .bitform .pricing .agency-desc {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .bitform .pricing .agency-desc .left {
+    margin-right: 30px;
+  }
+  .bitform .pricing .agency-text {
+    text-align: center;
+  }
+  .bitform .support .card {
+    width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+  .bitform .support .card .card-item {
+    margin: 0px 115px;
+  }
+  .bitform .support .card h2 {
+    font-size: 24px;
+  }
+  .bitform .support .card p {
+    font-size: 13px;
+  }
+  .bitform .support .card img {
+    width: 40px;
+    height: 40px;
+  }
+  .bit-integrator .showcase .grid {
+    grid-gap: 0;
+  }
+  .bit-integrator .showcase-text h1 {
+    font-size: 25px;
+  }
+  .bit-integrator .showcase-image img {
+    width: 500px;
+  }
+  .bit-integrator .footer-logo img {
+    height: 70px !important;
+  }
+  .glance h3 {
+    font-size: 20px !important;
+  }
+  .glance .card {
+    max-width: 580px !important;
+  }
+  .support .card {
+    width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+  .support .card .card-item {
+    margin: 0px 115px;
+  }
+  .support .card h2 {
+    font-size: 24px;
+  }
+  .support .card p {
+    font-size: 13px;
+  }
+  .top-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .support .card {
+    width: 600px !important;
+  }
+  .support .card .card-item {
+    margin: 0px 40px !important;
+  }
+  .glance .card {
+    max-width: 420px !important;
+  }
+  .bitform .support .card {
+    width: 600px !important;
+  }
+  .bitform .support .card .card-item {
+    margin: 0px 40px !important;
+  }
+  .integration-details .showcase,
+  .integration-details .container {
+    padding: 0;
+  }
+  .integration-details .integration {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    width: 300px;
+  }
+  .integration-details .item-left,
+  .integration-details .item-right {
+    margin: auto;
+  }
+  .integration-details .item-right {
+    margin-top: 40px;
+  }
+  .integration-request .integration-request-text {
+    width: 300px;
+  }
+  .integration-request .integration-image {
+    width: 500px;
+  }
+  .integration-request .request-form {
+    width: 500px;
+  }
+  .integration-request .request-form .last {
+    margin: 20px 35px;
+  }
+  .integration-request textarea {
+    height: 150px;
+  }
+}
+
+@media (max-width: 654px) {
+  .homepage .products .container {
+    padding: 0 80px;
+  }
+  .homepage .products .products-items .grid {
+    padding: 0 !important;
+  }
+  .homepage .products .products-items .not-responsive {
+    display: none;
+  }
+  .homepage .products .products-items .responsive {
+    display: block;
+  }
+  .homepage .products .products-items .responsive .product-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .bitform .features .features-items .grid {
+    padding: 0 !important;
+  }
+  .bitform .features .features-items .not-responsive {
+    display: none;
+  }
+  .bitform .features .features-items .responsive {
+    display: block !important;
+  }
+  .bitform .faqs .card {
+    width: 580px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .container {
+    padding: 0 !important;
+  }
+  .homepage .showcase .container {
+    padding: 0 80px;
+  }
+  .homepage .reviews .splide-item {
+    margin: 10px auto 10px auto !important;
+  }
+  .homepage .worldwide .world-map {
+    width: 500px !important;
+  }
+  .bitform .showcase-text h1 {
+    font-size: 30px !important;
+  }
+  .bitform .showcase-text .desc {
+    width: 220px !important;
+  }
+  .bitform .intro-text {
+    width: 450px !important;
+  }
+  .bitform .bitform-intro {
+    margin-top: 0 !important;
+  }
+  .bitform .bitform-intro .tab-menu {
+    width: 450px;
+  }
+  .bitform .bitform-intro .btn {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  .bitform .bitform-intro img {
+    width: 500px;
+    height: 345px;
+  }
+  .bitform .features .feature-button .btn {
+    padding: 8px 20px;
+    font-size: 11px;
+  }
+  .bitform .features .feature-button a {
+    font-size: 11px;
+  }
+  .bitform .integrations .integrations-text {
+    width: 450px !important;
+  }
+  .bitform .clients .splide-item {
+    margin: 10px auto 10px auto !important;
+  }
+  .bitform .faqs .card {
+    width: 480px !important;
+  }
+  .bitform .faqs .faq-content p {
+    padding: 2px 20px 15px 20px;
+  }
+  .bitform .support .card {
+    width: 500px !important;
+  }
+  .bitform .support .card .card-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 100px !important;
+  }
+  .bitform .support .card .live-chat {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .bitform .support .card .live-chat .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .integration-details .price {
+    width: 500px;
+  }
+  .integration-request .integration-image {
+    width: 400px;
+  }
+  .integration-request .request-form {
+    width: 400px;
+  }
+  .integration-request .request-form .last {
+    margin: 20px 26px;
+  }
+  .integration-request input {
+    width: 150px;
+  }
+  .support .card {
+    width: 500px !important;
+  }
+  .support .card .card-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 100px !important;
+  }
+  .support .card .live-chat {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .support .card .live-chat .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .grid {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+  }
+  footer .company {
+    margin-top: -173px;
+  }
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 20px !important;
+  }
+  .navbar .container {
+    padding: 0 20px;
+  }
+  .navbar .logo img {
+    width: 100px !important;
+    height: 30px !important;
+  }
+  .navbar i {
+    font-size: 24px !important;
+  }
+  .homepage .showcase .container {
+    padding: 0 40px;
+  }
+  .homepage .products .container {
+    padding: 0 40px;
+  }
+  .homepage .worldwide .world-map {
+    width: 400px !important;
+  }
+  .bitform .showcase-video .image {
+    width: 400px !important;
+  }
+  .bitform .showcase-video img {
+    width: 100% !important;
+  }
+  .bitform .intro-text {
+    width: 400px !important;
+  }
+  .bitform .bitform-intro .tab-menu {
+    width: 400px;
+  }
+  .bitform .bitform-intro .btn {
+    padding: 8px 8px;
+    font-size: 10px;
+  }
+  .bitform .bitform-intro img {
+    width: 400px;
+    height: 275px !important;
+  }
+  .bitform .integrations .integrations-text {
+    width: 400px !important;
+  }
+  .bitform .faqs .card {
+    width: 390px !important;
+  }
+  .bitform .support .card {
+    width: 400px !important;
+  }
+  .bitform .support .image {
+    display: none;
+  }
+  .bit-integrator .showcase-image img {
+    width: 400px;
+    height: 400px;
+  }
+  .bit-integrator footer h3 {
+    font-size: 18px !important;
+  }
+  .bit-integrator footer .menu {
+    font-size: 12px;
+  }
+  .bit-integrator footer .footer-logo img {
+    height: 50px !important;
+  }
+  .bit-integrator footer .footer-product {
+    margin-top: 0px;
+  }
+  .all-integrations footer h3 {
+    font-size: 18px !important;
+  }
+  .all-integrations footer .menu {
+    font-size: 12px;
+  }
+  .all-integrations footer .footer-logo img {
+    height: 50px !important;
+  }
+  .all-integrations footer .footer-product {
+    margin-top: 0px;
+  }
+  .integration-details .price {
+    width: 400px;
+  }
+  .integration-list h3 {
+    font-size: 20px;
+  }
+  .integration-list input {
+    width: 200px;
+  }
+  .integration-list .integration-item {
+    width: 300px;
+    padding: 15px 30px;
+  }
+  .integration-list img {
+    width: 30px;
+    height: 30px;
+  }
+  .integration-list .image {
+    width: 40px;
+    height: 40px;
+  }
+  .integration-list .title {
+    font-size: 12px;
+  }
+  .integration-list .price {
+    margin-top: -14px;
+  }
+  .integration-list .price span:first-child {
+    font-weight: 600;
+    font-size: 26px;
+  }
+  .find-integration {
+    width: 300px !important;
+    padding: 15px 30px;
+  }
+  .find-integration .btn {
+    padding: 10px 32px !important;
+  }
+  .integration-request .integration-image {
+    width: 300px;
+  }
+  .integration-request .request-form {
+    width: 300px;
+  }
+  .integration-request .request-form .last {
+    margin: 0px;
+  }
+  .integration-request input {
+    width: 213px;
+    margin-bottom: 10px;
+  }
+  .integration-request .first {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .integration-request textarea {
+    height: 120px;
+    width: 213px;
+    margin: auto;
+  }
+  .integration-request .button {
+    width: 213px;
+    margin: auto;
+  }
+  .glance .grid {
+    grid-gap: 0;
+  }
+  .glance h3 {
+    font-size: 17px;
+  }
+  .glance .card {
+    max-width: 320px !important;
+  }
+  .glance .card .glance-items {
+    padding: 0;
+  }
+  .glance .card .glance-items .item-img {
+    width: 25px;
+    height: 25px;
+  }
+  .glance .card .glance-items .item-img img {
+    width: 12px;
+    height: 12px;
+  }
+  .glance .card .glance-items .item-heading {
+    font-size: 12px;
+  }
+  .glance .card .glance-items .item-desc {
+    width: 60px;
+  }
+  .glance .card .glance-items .item-desc p {
+    font-size: 9px;
+  }
+  .support .card {
+    width: 400px !important;
+  }
+  .support .image {
+    display: none;
+  }
+  .support .content p {
+    font-size: 12px;
+  }
+  footer .grid {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+    justify-items: center;
+  }
+  footer .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  footer .product {
+    margin-top: -80px;
+  }
+  footer .company {
+    margin-top: 0px;
+  }
+  footer .social-media .flex {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage p {
+    font-size: 12px;
+  }
+  .homepage h1 {
+    font-size: 22px;
+  }
+  .homepage h2 {
+    font-size: 20px;
+  }
+  .homepage h3 {
+    font-size: 18px;
+  }
+  .homepage .worldwide .worldwide-text {
+    width: 300px !important;
+  }
+  .homepage .worldwide .world-map {
+    width: 330px !important;
+  }
+  .bitform .showcase-video .image {
+    width: 350px !important;
+  }
+  .bitform .intro-text {
+    width: 300px !important;
+  }
+  .bitform .intro-text p {
+    font-size: 13px;
+  }
+  .bitform .bitform-intro .tab-menu {
+    width: 300px;
+  }
+  .bitform .bitform-intro img {
+    width: 350px;
+    height: 240px !important;
+  }
+  .bitform .features .features-text {
+    width: 300px !important;
+  }
+  .bitform .integrations .integrations-text {
+    width: 300px !important;
+  }
+  .bitform .pricing .agency {
+    width: 300px !important;
+  }
+  .bitform .pricing .agency .icon {
+    width: 17px;
+    height: 17px;
+  }
+  .bitform .pricing .agency .icon img {
+    width: 10px;
+    height: 10px;
+  }
+  .bitform .pricing .agency .left {
+    margin-right: 0 !important;
+  }
+  .bitform .faqs .card {
+    width: 300px !important;
+    padding: 20px 10px;
+  }
+  .bitform .faqs .faq-wrapper {
+    padding: 0 3px;
+  }
+  .bitform .faqs .faq-toggle {
+    padding: 20px 0px;
+  }
+  .bitform .support .card {
+    width: 300px !important;
+  }
+  .bitform .support .card .card-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 60px !important;
+  }
+  .bitform .support .card .live-chat {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .bitform .support .card .live-chat .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .bit-integrator .showcase-image img {
+    width: 300px;
+    height: 300px;
+  }
+  .bit-integrator .showcase-text h1 {
+    font-size: 20px;
+  }
+  .bit-integrator .showcase-text p {
+    font-size: 12px;
+    width: 300px;
+  }
+  .integration-details .price {
+    width: 300px;
+  }
+  .integration-details .price .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .integration-details .price .card .text {
+    margin-bottom: 15px;
+  }
+  .integration-item {
+    width: 250px !important;
+    padding: 15px 10px !important;
+  }
+  .integration-list h3 {
+    font-size: 17px;
+  }
+  .find-integration {
+    width: 250px !important;
+  }
+  .find-integration h3 {
+    font-size: 11px !important;
+  }
+  .find-integration .btn {
+    padding: 10px 13px !important;
+    font-size: 11px !important;
+  }
+  .integration-request .integration-request-text {
+    width: 250px;
+  }
+  .integration-request .integration-image {
+    width: 100%;
+  }
+  .integration-request .request-form {
+    width: 100%;
+  }
+  .integration-request textarea {
+    width: 213px;
+    height: 100px;
+  }
+  .glance .container {
+    padding: 0 20px;
+  }
+  .glance .card {
+    max-width: 280px !important;
+  }
+  .support .card {
+    width: 300px !important;
+  }
+  .support .card .card-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 60px !important;
+  }
+  .support .card .live-chat {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .support .card .live-chat .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

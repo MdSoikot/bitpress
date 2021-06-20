@@ -1,0 +1,91 @@
+<%- include('../template/header'); -%>
+
+    <body style='background: #fff'>
+
+        <head>
+            <%- include('../template/topbar'); -%>
+
+            <div class="navbar bit-integrator-nav" id="navbar">
+                <div class="container flex flex-between">
+                    <div class="logo flex">
+                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                alt="file not found"></a>
+                    </div>
+                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                src="/Assets/images/cancel.svg" alt="file not found"></a>
+                        <a href="index.html">Integrations</a>
+
+                        <div class="nav-btn">
+                            <a href="index.html">Signup</a>
+                            <a href="index.html">Login</a>
+
+                        </div>
+                    </div>
+                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                        <i class="fas fa-bars" style="font-size:30px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </head>
+
+        <div class="all-integrations mt-6">
+            <section class="integration-list text-center">
+                <div class="container">
+                    <div class="search-bar flex flex-center">
+                        <input type="text" placeholder="Search your integration">
+                    </div>
+                    <%Object.keys(integrations).map(item=>{%>
+                        <div class="integration-item">
+                            <div class="item item-left">
+                                <div class="image">
+                                    <img src=<%=integrations[item].img_url_left%> alt="file not found">
+                                </div>
+                                <div class="title">
+                                    <%=integrations[item].desc.title1%>
+                                </div>
+                            </div>
+
+                            <div class="price">
+                                <span>
+                                    <%=integrations[item].subscription.price%>
+                                </span>
+                                <span>
+                                    <%=integrations[item].subscription.type%>
+                                </span>
+                            </div>
+                            <div class="item item-right">
+                                <div class="image">
+                                    <img src=<%=integrations[item].img_url_right%> alt="file not found">
+                                </div>
+                                <div class="title">
+                                    <%=integrations[item].desc.title2%>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+                            <div class="find-integration">
+                                <h3>Didn’t find your integration? </h3>
+                                <a href="integration-request"><button type="button" class="btn btn-primary">Submit Integration
+                                        Request</button></a>
+                            </div>
+                </div>
+            </section>
+
+
+
+
+
+            <%- include('../template/integrator-footer'); -%>
+
+        </div>
+        <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+            <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+        </button>
+
+
+        <%- include('../template/script'); -%>
+
+    </body>
