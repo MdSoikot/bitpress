@@ -13,11 +13,11 @@
                         <div class="bitform-links links flex" id="bitform-links">
                             <a href="javascript:void(0)" class="closebtn" onclick="bitFormCloseNav()"><img
                                     src="/Assets/images/cancel.svg" alt="file not found"></a>
-                            <a href="index.html">Pricing</a>
+                            <!-- <a href="index.html">Pricing</a>
                             <a href="index.html">Documentation</a>
-                            <a href="index.html">Demo</a>
+                            <a href="index.html">Demo</a> -->
                             <div class="nav-btn">
-                                <a href="index.html">Login</a>
+                                <a href="https://subscription.bitpress.pro/Login">Login</a>
                             </div>
                         </div>
                         <div class="responsive-menu" onclick="resBitFormMenuActive()">
@@ -39,7 +39,7 @@
                         <div class="desc grid grid-fr-2 mt-2">
                             <div class="reviews">
                                 <div class="star flex">
-                                    <span>5 </span>
+                                    <span>20 </span>
                                     <span class="flex">
                                         <img src="/assets/images/rating_star.svg" alt="file not found">
                                     </span>
@@ -55,7 +55,8 @@
                             </div>
                         </div>
                         <div class="button mt-1">
-                            <button type="button" class="btn">Lifetime Deal</button>
+                            <a href="https://subscription.bitpress.pro/Login"><button type="button" class="btn">Lifetime
+                                    Deal</button></a>
                             <button type="button" class="btn btn-outline">Try Demo</button>
                         </div>
                     </div>
@@ -188,9 +189,10 @@
                         </div>
                     </div>
                     <div class="feature-button flex flex-column">
-                        <button type="button" class="btn">Get Bit Form Now</button>
-                        <a href="">See All Features
-                        </a>
+                        <a href="https://wordpress.org/plugins/bit-form/#description"><button type="button"
+                                class="btn">Get Bit Form Now</button></a>
+                        <!-- <a href="">See All Features
+                        </a> -->
                     </div>
                 </div>
 
@@ -365,6 +367,63 @@
                 <div class="splide clients-slider">
                     <div class="splide__track">
                         <ul class="splide__list">
+                            <% Object.keys(homepage_reviews).map(item=>{%>
+                            <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src=<%=homepage_reviews[item].profile_img%> alt="file not found" />
+
+                                        </div>
+                                        <div class="title">
+                                            <h4>
+                                              <%=homepage_reviews[item].client_name%>
+                                            </h4>
+                                            <p>@hello</p>
+                                          </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>               <%=homepage_reviews[item].content%><span><a href=" <%=homepage_reviews[item].review_link%>">Read more</a></span>
+
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
+                            <%})%>
+
+                            <!-- <li class="splide__slide">
+                                <div class="splide-item card">
+                                    <div class="rating">
+                                        <img src="/assets/images/rating_star.svg" alt="file not found">
+                                    </div>
+                                    <div class="profile-section mt-2">
+                                        <div class="image">
+                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
+                                        </div>
+                                        <div class="title">
+                                            <h3>Hero</h3>
+                                            <p>@hello</p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            readable
+                                            content of a page when looking at its layout. The point of using Lorem Ipsum
+                                            is
+                                            that it has a more-or-less normal distribution of letters, as opposed to
+                                            using
+                                            'Content here, content here', making it look like</p>
+                                    </div>
+                                    <div class="icons mt-1">
+                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
+                                    </div>
+                                </div>
+                            </li>
                             <li class="splide__slide">
                                 <div class="splide-item card">
                                     <div class="rating">
@@ -422,34 +481,6 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="splide__slide">
-                                <div class="splide-item card">
-                                    <div class="rating">
-                                        <img src="/assets/images/rating_star.svg" alt="file not found">
-                                    </div>
-                                    <div class="profile-section mt-2">
-                                        <div class="image">
-                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
-                                        </div>
-                                        <div class="title">
-                                            <h3>Hero</h3>
-                                            <p>@hello</p>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <p>It is a long established fact that a reader will be distracted by the
-                                            readable
-                                            content of a page when looking at its layout. The point of using Lorem Ipsum
-                                            is
-                                            that it has a more-or-less normal distribution of letters, as opposed to
-                                            using
-                                            'Content here, content here', making it look like</p>
-                                    </div>
-                                    <div class="icons mt-1">
-                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
-                                    </div>
-                                </div>
-                            </li>
 
                             <li class="splide__slide">
                                 <div class="splide-item card">
@@ -478,36 +509,7 @@
                                         <img src="/assets/images/wordpress_logo.png" alt="file not found" />
                                     </div>
                                 </div>
-                            </li>
-
-                            <li class="splide__slide">
-                                <div class="splide-item card">
-                                    <div class="rating">
-                                        <img src="/assets/images/rating_star.svg" alt="file not found">
-                                    </div>
-                                    <div class="profile-section mt-2">
-                                        <div class="image">
-                                            <img src="/assets/images/profile2.jpg" alt="file not found" />
-                                        </div>
-                                        <div class="title">
-                                            <h3>Hero</h3>
-                                            <p>@hello</p>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <p>It is a long established fact that a reader will be distracted by the
-                                            readable
-                                            content of a page when looking at its layout. The point of using Lorem Ipsum
-                                            is
-                                            that it has a more-or-less normal distribution of letters, as opposed to
-                                            using
-                                            'Content here, content here', making it look like</p>
-                                    </div>
-                                    <div class="icons mt-1">
-                                        <img src="/assets/images/wordpress_logo.png" alt="file not found" />
-                                    </div>
-                                </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

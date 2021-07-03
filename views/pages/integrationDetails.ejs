@@ -5,43 +5,47 @@
         <head>
             <%- include('../template/topbar'); -%>
 
-            <div class="navbar bit-integrator-nav" id="navbar">
-                <div class="container flex flex-between">
-                    <div class="logo flex">
-                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
-                                alt="file not found"></a>
-                    </div>
-                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
-                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
-                                src="/Assets/images/cancel.svg" alt="file not found"></a>
-                        <a href="index.html">Integrations</a>
+                <div class="navbar bit-integrator-nav" id="navbar">
+                    <div class="container flex flex-between">
+                        <div class="logo flex">
+                            <a class="flex" href="/bit-integrator"><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                    alt="file not found"></a>
+                        </div>
+                        <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                            <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                    src="/Assets/images/cancel.svg" alt="file not found"></a>
+                            <a href="/all-integrations">Integrations</a>
 
-                        <div class="nav-btn">
-                            <a href="index.html">Signup</a>
-                            <a href="index.html">Login</a>
+                            <div class="nav-btn">
+                                <a href="https://bitapps.pro/register">Signup</a>
+                                <a href="https://bitapps.pro/login">Login</a>
 
+                            </div>
+                        </div>
+                        <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                            <i class="fas fa-bars" style="font-size:30px;"></i>
                         </div>
                     </div>
-                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
-                        <i class="fas fa-bars" style="font-size:30px;"></i>
-                    </div>
-                </div>
 
-            </div>
+                </div>
         </head>
 
         <div class="integration-details mt-4">
             <section class="showcase text-center">
                 <div class="container">
                     <div class="integration-details-text">
-                        <h2>Google Sheet - Mailchimp Integration</h2>
+                        <h2>
+                            <%= integDetails.details%>
+                        </h2>
                     </div>
                     <div class="integration">
                         <div class="item-left card">
-                            <h3>Google Sheet</h3>
+                            <h3>
+                                <%=integDetails.type.substring(0,integDetails.type.indexOf('-'))%>
+                            </h3>
                             <div class="details flex mt-1">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     All limited links
@@ -50,7 +54,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -59,7 +63,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -68,7 +72,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -77,23 +81,26 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="assets/images/integrations/googlesheet.svg" alt="file not found">
+                                <img src=<%=integDetails.photo %> alt="file not found">
 
                             </div>
                         </div>
 
                         <div class="item-right card">
-                            <h3>Mailchimp</h3>
+                            <h3>
+                                <%= integDetails.type.substring(integDetails.type.indexOf('-')+1,integDetails.type.length)
+                                    %>
+                            </h3>
                             <div class="details flex mt-1">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     All limited links
@@ -102,7 +109,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -111,7 +118,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -120,7 +127,7 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
@@ -129,14 +136,14 @@
 
                             <div class="details flex">
                                 <div class="icon">
-                                    <img src="assets/images/details_check.svg" alt="file not found">
+                                    <img src="/assets/images/details_check.svg" alt="file not found">
                                 </div>
                                 <div class="text">
                                     Own analytics platform
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="assets/images/integrations/mailchimp.svg" alt="file not found">
+                                <img src=<%=integDetails.photo2 %> alt="file not found">
                             </div>
                         </div>
                     </div>
@@ -144,9 +151,9 @@
                         <div class="card">
                             <div class="text">
                                 <span>
-                                    $5<span class="type">
-                                        /month
-                                    </span></span>
+                                    $<%=planDetails.price%><span class="type">
+                                            /<%=planDetails.pricing_duration%>
+                                        </span></span>
 
                             </div>
                             <div class="button">
@@ -192,5 +199,5 @@
         </button>
 
         <%- include('../template/script'); -%>
-
+            <script src="/Assets/js/stickyNav.js"></script>
     </body>

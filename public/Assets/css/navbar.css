@@ -40,7 +40,6 @@
 }
 
 .bitform-nav {
-  z-index: 9999;
   -webkit-box-shadow: 0 4px 6px -2px #dfdfdf;
           box-shadow: 0 4px 6px -2px #dfdfdf;
   height: 60px;

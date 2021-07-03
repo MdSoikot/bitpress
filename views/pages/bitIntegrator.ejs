@@ -14,11 +14,11 @@
                         <div class="bit-integrator-links links flex" id="bit-integrator-links">
                             <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
                                     src="/Assets/images/cancel.svg" alt="file not found"></a>
-                            <a href="index.html">Integrations</a>
+                            <a href="all-integrations">Integrations</a>
 
                             <div class="nav-btn">
-                                <a href="index.html">Signup</a>
-                                <a href="index.html">Login</a>
+                                <a href="https://bitapps.pro/register">Signup</a>
+                                <a href="https://bitapps.pro/login">Login</a>
 
                             </div>
                         </div>
@@ -50,43 +50,14 @@
                         <h2>Our Popular Integration</h2>
                     </div>
                     <div class="search-bar flex flex-center mt-1">
-                        <input type="text" placeholder="Search your integration" onkeyup="handleChange(event)">
+                        <input type="text" placeholder="Search your integration" id="searchBar">
                     </div>
-                    <%Object.keys(integrations).map(item=>{%>
-                        <a href="integration-details">
-                            <div class="integration-item">
+                    <div id="addIntegration">
 
-                                <div class="item item-left">
-                                    <div class="image">
-                                        <img src=<%=integrations[item].img_url_left%> alt="file not found">
-                                    </div>
-                                    <div class="title">
-                                        <%=integrations[item].desc.title1%>
-                                    </div>
-                                </div>
+                    </div>
+                    <a class="mt-4" href="all-integrations"><button type="button" class="btn btn-primary">See all
+                            integration</button></a>
 
-                                <div class="price">
-                                    <span>
-                                        <%=integrations[item].subscription.price%>
-                                    </span>
-                                    <span>
-                                        <%=integrations[item].subscription.type%>
-                                    </span>
-                                </div>
-                                <div class="item item-right">
-                                    <div class="image">
-                                        <img src=<%=integrations[item].img_url_right%> alt="file not found">
-                                    </div>
-                                    <div class="title">
-                                        <%=integrations[item].desc.title2%>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <%})%>
-                            <a href="all-integrations"><button type="button" class="btn btn-primary">See all
-                                    integration</button></a>
                 </div>
             </section>
             <section class="glance">
@@ -149,11 +120,82 @@
 
         </div>
         <script>
-            const handleChange = (e) => {
-                console.log(e.target.value);
+            const allIntegrations = JSON.parse('<%- JSON.stringify(allIntegrations) %>');
+            const allPlans = JSON.parse('<%- JSON.stringify(allPlans) %>');
+            const searchBar = document.getElementById('searchBar')
+
+            searchBar.addEventListener("keyup", (e) => {
+                const searchString = e.target.value
+                const filteredCharacters = allIntegrations.filter(character => {
+                    return (
+                        character.type.includes(searchString)
+                    )
+                })
+                showView(filteredCharacters)
+            })
+            let addIntegration = document.getElementById('addIntegration')
+            const showView = (data) => {
+                const htmlString = data.map(item => {
+                    return `
+    <a href="integration-details/${item.id}">
+        <div class="integration-item">
+            <div class="item item-left">
+                <div class="image">
+                    <img src="${item.photo}" alt="file not found">
+                </div>
+                <div class="title">
+                    ${item.type.substring(0, item.type.indexOf('-'))}
+                </div>
+            </div>
+
+            <div class="price">
+                <span>
+                    ${(() => {
+                            let price = '';
+                            for (const plan of allPlans) {
+                                if (item.id === plan.integration_id) {
+                                    price = plan.price
+                                    return "$" + price
+                                }
+                            }
+                        })()}
+             
+                </span>
+                <span>       ${(() => {
+                            let pricingDuration = ''
+                            for (const plan of allPlans) {
+                                if (item.id === plan.integration_id) {
+                                    pricingDuration = plan.pricing_duration
+                                    return "/" + pricingDuration
+                                }
+                            }
+                        })()}
+                </span>
+            </div>
+            <div class="item item-right">
+                <div class="image">
+                    <img src="${item.photo2}" alt="file not found">
+                </div>
+                <div class="title">
+                    ${item.type.substring(item.type.indexOf('-') + 1, item.type.length)
+                        }
+                </div>
+            </div>
+        </div>
+    </a>`
+                }).join('');
+                addIntegration.innerHTML = htmlString;
             }
+            let showItems = []
+            for (let i = 0; i <= 2; i++) {
+                showItems.push(allIntegrations[i])
+            }
+            showView(showItems)
+
+
 
         </script>
+        <script src="/Assets/js/stickyNav.js"></script>
         <%- include('../template/script'); -%>
 
     </body>

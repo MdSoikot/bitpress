@@ -734,6 +734,7 @@ footer .container .icon a img {
   font-family: "Roboto";
   font-weight: 500;
   margin-top: 8px;
+  color: black;
 }
 
 .integration-list .price {
@@ -827,6 +828,7 @@ footer .container .icon a img {
   font-weight: 600;
   color: #4caf50;
   font-size: 25px;
+  text-transform: capitalize;
 }
 
 .integration-details .integration .card {
@@ -1901,6 +1903,7 @@ footer .container .icon a img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
 
 .bitform .clients .profile-section .image {
@@ -1934,9 +1937,9 @@ footer .container .icon a img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2100,5 +2103,69 @@ footer .container .icon a img {
     -webkit-transform: translateY(-2px);
             transform: translateY(-2px);
   }
+}
+
+.pagination {
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pagination .tableList {
+  min-height: 250px;
+  text-indent: 20px;
+}
+
+.tableList .objectBlock {
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pageButton {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.clickPageNumber {
+  background-color: lightgrey;
+  padding: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.pagination-block {
+  text-align: center;
+  width: 100%;
+}
+
+.pagination-block span {
+  display: inline-block;
+}
+
+.pagination-block .pageButton {
+  background-color: grey;
+  color: white;
+}
+
+.pagination-block span:hover {
+  cursor: pointer;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+
+.outline-none {
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 /*# sourceMappingURL=style.css.map */

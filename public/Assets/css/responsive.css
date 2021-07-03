@@ -18,8 +18,8 @@
     color: #fff;
   }
   .navbar .links a img {
-    width: 11px;
-    height: 11px;
+    width: 11px !important;
+    height: 11px !important;
   }
   .navbar .links .closebtn {
     display: -webkit-box;
@@ -647,6 +647,18 @@
   .integration-details .price {
     width: 400px;
   }
+  .integration-details footer h3 {
+    font-size: 18px !important;
+  }
+  .integration-details footer .menu {
+    font-size: 12px;
+  }
+  .integration-details footer .footer-logo img {
+    height: 50px !important;
+  }
+  .integration-details footer .footer-product {
+    margin-top: 0px;
+  }
   .integration-list h3 {
     font-size: 20px;
   }
@@ -681,6 +693,18 @@
   }
   .find-integration .btn {
     padding: 10px 32px !important;
+  }
+  .integration-request footer h3 {
+    font-size: 18px !important;
+  }
+  .integration-request footer .menu {
+    font-size: 12px;
+  }
+  .integration-request footer .footer-logo img {
+    height: 50px !important;
+  }
+  .integration-request footer .footer-product {
+    margin-top: 0px;
   }
   .integration-request .integration-image {
     width: 300px;

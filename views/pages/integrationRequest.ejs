@@ -5,32 +5,32 @@
         <head>
             <%- include('../template/topbar'); -%>
 
-            <div class="navbar bit-integrator-nav" id="navbar">
-                <div class="container flex flex-between">
-                    <div class="logo flex">
-                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
-                                alt="file not found"></a>
-                    </div>
-                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
-                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
-                                src="/Assets/images/cancel.svg" alt="file not found"></a>
-                        <a href="index.html">Integrations</a>
+                <div class="navbar bit-integrator-nav" id="navbar">
+                    <div class="container flex flex-between">
+                        <div class="logo flex">
+                            <a class="flex" href="/bit-integrator"><img src="/Assets/images/bit_integrator_nav_logo.svg"
+                                    alt="file not found"></a>
+                        </div>
+                        <div class="bit-integrator-links links flex" id="bit-integrator-links">
+                            <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+                                    src="/Assets/images/cancel.svg" alt="file not found"></a>
+                            <a href="/all-integrations">Integrations</a>
 
-                        <div class="nav-btn">
-                            <a href="index.html">Signup</a>
-                            <a href="index.html">Login</a>
+                            <div class="nav-btn">
+                                <a href="https://bitapps.pro/register">Signup</a>
+                                <a href="https://bitapps.pro/login">Login</a>
 
+                            </div>
+                        </div>
+                        <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+                            <i class="fas fa-bars" style="font-size:30px;"></i>
                         </div>
                     </div>
-                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
-                        <i class="fas fa-bars" style="font-size:30px;"></i>
-                    </div>
-                </div>
 
-            </div>
+                </div>
         </head>
 
-        <div class="integration-request mt-4">
+        <div class="integration-request mt-6">
             <section class="showcase text-center">
                 <div class="container">
                     <div class="integration-request-text">
@@ -108,5 +108,6 @@
         </button>
 
         <%- include('../template/script'); -%>
+            <script src="/Assets/js/stickyNav.js"></script>
 
     </body>

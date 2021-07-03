@@ -1,91 +1,197 @@
 <%- include('../template/header'); -%>
 
-    <body style='background: #fff'>
+	<body style='background: #fff'>
 
-        <head>
-            <%- include('../template/topbar'); -%>
+		<head>
+			<%- include('../template/topbar'); -%>
 
-            <div class="navbar bit-integrator-nav" id="navbar">
-                <div class="container flex flex-between">
-                    <div class="logo flex">
-                        <a class="flex" href=""><img src="/Assets/images/bit_integrator_nav_logo.svg"
-                                alt="file not found"></a>
-                    </div>
-                    <div class="bit-integrator-links links flex" id="bit-integrator-links">
-                        <a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
-                                src="/Assets/images/cancel.svg" alt="file not found"></a>
-                        <a href="index.html">Integrations</a>
+				<div class="navbar bit-integrator-nav" id="navbar">
+					<div class="container flex flex-between">
+						<div class="logo flex">
+							<a class="flex" href="/bit-integrator"><img src="/Assets/images/bit_integrator_nav_logo.svg"
+									alt="file not found"></a>
+						</div>
+						<div class="bit-integrator-links links flex" id="bit-integrator-links">
+							<a href="javascript:void(0)" class="closebtn" onclick="bitIntegratorCloseNav()"><img
+									src="/Assets/images/cancel.svg" alt="file not found"></a>
+							<a href="/all-integrations">Integrations</a>
 
-                        <div class="nav-btn">
-                            <a href="index.html">Signup</a>
-                            <a href="index.html">Login</a>
+							<div class="nav-btn">
+								<a href="https://bitapps.pro/register">Signup</a>
+								<a href="https://bitapps.pro/login">Login</a>
 
-                        </div>
-                    </div>
-                    <div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
-                        <i class="fas fa-bars" style="font-size:30px;"></i>
-                    </div>
+							</div>
+						</div>
+						<div class="responsive-menu" onclick="resBitIntegratorMenuActive()">
+							<i class="fas fa-bars" style="font-size:30px;"></i>
+						</div>
+					</div>
+
+				</div>
+		</head>
+
+		<div class="all-integrations mt-6">
+			<section class="integration-list text-center">
+				<div class="container">
+					<div class="search-bar flex flex-center mt-1">
+						<input type="text" placeholder="Search your integration" id="searchBar">
+					</div>
+					<!-- <div id="addIntegration">
+
+                    </div> -->
+
+					<div class="pagination">
+						<div class="tableList" id="listingTable"></div>
+						<div class="pagination-block">
+							<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+							<span id="page" class="outline-none"></span>
+							<a href="javascript:nextPage()" id="btn_next">Next</a>
+						</div>
+					</div>
+
+					<div class="find-integration">
+						<h3>Didn’t find your integration? </h3>
+						<a href="integration-request"><button type="button" class="btn btn-primary">Submit
+								Integration
+								Request</button></a>
+					</div>
+				</div>
+			</section>
+
+			<%- include('../template/integrator-footer'); -%>
+
+		</div>
+		<button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
+			<span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
+		</button>
+
+
+		<%- include('../template/script'); -%>
+			<script src="/Assets/js/stickyNav.js"></script>
+			<script>
+				const allIntegrations = JSON.parse('<%- JSON.stringify(allIntegrations) %>')
+				const allPlans = JSON.parse('<%- JSON.stringify(allPlans) %>');
+				const searchBar = document.getElementById('searchBar')
+				let allIntegs = []
+
+				searchBar.addEventListener("keyup", (e) => {
+					const searchString = e.target.value
+					const filteredCharacters = allIntegrations.filter(character => {
+						return (
+							character.type.includes(searchString)
+						)
+					})
+					allIntegs = filteredCharacters
+					changePage(1)
+				})
+
+			</script>
+			<script>
+
+				let current_page = 1
+				const records_per_page = 5
+
+				function prevPage() {
+					if (current_page > 1) {
+						current_page--
+						changePage(current_page)
+					}
+				}
+
+				function nextPage() {
+					if (current_page < numPages()) {
+						current_page++
+						changePage(current_page)
+					}
+				}
+
+				function changePage(page) {
+					const btn_next = document.getElementById('btn_next')
+					const btn_prev = document.getElementById('btn_prev')
+					const listing_table = document.getElementById('listingTable')
+					const page_span = document.getElementById('page')
+
+					// Validate page
+					if (page < 1) page = 1
+					if (page > numPages()) page = numPages()
+
+					listing_table.innerHTML = ''
+
+					for (let i = (page - 1) * records_per_page; i < (page * records_per_page) && i < allIntegs.length; i++) {
+						const item = allIntegs[i]
+						listing_table.innerHTML += `<a href="integration-details/${item.id}">
+        <div class="integration-item">
+            <div class="item item-left">
+                <div class="image">
+                    <img src="${item.photo}" alt="file not found">
                 </div>
-
+                <div class="title">
+                    ${item.type.substring(0, item.type.indexOf('-'))}
+                </div>
             </div>
-        </head>
 
-        <div class="all-integrations mt-6">
-            <section class="integration-list text-center">
-                <div class="container">
-                    <div class="search-bar flex flex-center">
-                        <input type="text" placeholder="Search your integration">
-                    </div>
-                    <%Object.keys(integrations).map(item=>{%>
-                        <div class="integration-item">
-                            <div class="item item-left">
-                                <div class="image">
-                                    <img src=<%=integrations[item].img_url_left%> alt="file not found">
-                                </div>
-                                <div class="title">
-                                    <%=integrations[item].desc.title1%>
-                                </div>
-                            </div>
-
-                            <div class="price">
-                                <span>
-                                    <%=integrations[item].subscription.price%>
-                                </span>
-                                <span>
-                                    <%=integrations[item].subscription.type%>
-                                </span>
-                            </div>
-                            <div class="item item-right">
-                                <div class="image">
-                                    <img src=<%=integrations[item].img_url_right%> alt="file not found">
-                                </div>
-                                <div class="title">
-                                    <%=integrations[item].desc.title2%>
-
-                                </div>
-                            </div>
-                        </div>
-                        <%})%>
-                            <div class="find-integration">
-                                <h3>Didn’t find your integration? </h3>
-                                <a href="integration-request"><button type="button" class="btn btn-primary">Submit Integration
-                                        Request</button></a>
-                            </div>
+            <div class="price">
+                <span>
+                    ${(() => {
+								let price = '';
+								for (const plan of allPlans) {
+									if (item.id === plan.integration_id) {
+										price = plan.price
+										return "$" + price
+									}
+								}
+							})()}
+             
+                </span>
+                <span>       ${(() => {
+								let pricingDuration = ''
+								for (const plan of allPlans) {
+									if (item.id === plan.integration_id) {
+										pricingDuration = plan.pricing_duration
+										return "/" + pricingDuration
+									}
+								}
+							})()}
+                </span>
+            </div>
+            <div class="item item-right">
+                <div class="image">
+                    <img src="${item.photo2}" alt="file not found">
                 </div>
-            </section>
-
-
-
-
-
-            <%- include('../template/integrator-footer'); -%>
-
+                <div class="title">
+                    ${item.type.substring(item.type.indexOf('-') + 1, item.type.length)
+							}
+                </div>
+            </div>
         </div>
-        <button type="button" class="btn scroll-btn" id='scroll-btn' onclick="gotoTop()">
-            <span class="image"><img src="/assets/images/up-arrow.svg" alt="file not found"></span>
-        </button>
+    </a>`
+					}
+					// page_span.innerHTML = ""
+					page_span.innerHTML = `${page}/${numPages()}`
+					// for (let i = 1; i < numPages() + 1; i++) {
+					// 	page_span.innerHTML += "<span class='clickPageNumber'>" + i + "</span>";
+					// }
 
+					if (page == 1) {
+						btn_prev.style.visibility = 'hidden'
+					} else {
+						btn_prev.style.visibility = 'visible'
+					}
 
-        <%- include('../template/script'); -%>
+					if (page == numPages()) {
+						btn_next.style.visibility = 'hidden'
+					} else {
+						btn_next.style.visibility = 'visible'
+					}
+				}
 
-    </body>
+				function numPages() {
+					return Math.ceil(allIntegs.length / records_per_page)
+				}
+
+				window.onload = function () {
+					allIntegs = allIntegrations
+					changePage(1)
+				}
+			</script>
+	</body>

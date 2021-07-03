@@ -1,31 +1,48 @@
 const router = require('express').Router()
+const axios = require('axios')
+const integrationController = require('../controller/integrationController')
+const fs = require('fs')
+global.allIntegrations = require('../integrationDetails.json')
+global.allPlans = require('../allPlans.json')
+
+
+
 const products_card = {
     "bit_form": {
         "img_url": "/Assets/images/bit_form_logo.svg",
         "title": "Bit Form",
-        "desc": "Your ultimate drag & drop and interactive form builder plugin in WordPress"
+        "desc": "Your ultimate drag & drop and interactive form builder plugin in WordPress",
+        "link":"https://wordpress.org/plugins/bit-form/"
     },
     "bit_integrator": {
         "img_url": "/Assets/images/bit_integrator_logo.svg",
         "title": "Bit Integrator",
-        "desc": "An advanced integration platform to manage your business."
+        "desc": "An advanced integration platform to manage your business.",
+        "link":"https://bitapps.pro/"
+
     },
     "bit_smtp": {
         "img_url": "/Assets/images/bitsmtp_logo.svg",
         "title": "Bit SMTP",
-        "desc": "A WordPress Plugin to authenticate the mail service of your website."
+        "desc": "A WordPress Plugin to authenticate the mail service of your website.",
+        "link":"https://wordpress.org/plugins/bit-smtp/#:~:text=Bit%20SMTP%20plugin%20allows%20you,email%20deliverability%20more%20easygoing%20%26%20reliable."
+
     },
     "inventory_woocommerce": {
         "img_url": "/Assets/images/ziw_Logo.svg",
         "title": "Zoho inventory With woocommerce",
         "desc": "A connector to Zoho Inventory with Woo Commerce.",
-        'class': "inventory-woocommerce"
+        'class': "inventory-woocommerce",
+        "link":""
+
     },
     "crm_woocommerce": {
         "img_url": "/Assets/images/zcw_logo.svg",
         "title": "Zoho CRM With woocommerce",
         "desc": "A connector to Zoho CRM with Woo Commerce.",
-        'class': "crm-woocommerce"
+        'class': "crm-woocommerce",
+        "link":""
+
 
     }
 
@@ -60,14 +77,14 @@ const homepage_reviews = {
         "profile_img": "/Assets/images/reviews/Paul.J.Lange.png",
         "title": "",
         "content": "I’ve used so many different form plugins over the years. All of the majors and a few experimental ones.When I saw Bitform it was a total gamble and one that paid off!Although Bitform is still developing some of the more advanced functionality that the majors.....",
-        "review_link": ""
+        "review_link": "https://wordpress.org/support/topic/bitform-rocks-woo-ninja-and-gravity-probably-didnt-see-this-coming/"
     },
     "review2": {
         "client_name": "dalibor",
         "profile_img": "/Assets/images/reviews/dalibor.png",
         "title": "",
         "content": "This plugin is really good. It will easily replace I would dare to say even Gravity Forms. This plugin has truly everything you need with ton of integrations and customizations for your own desired setting.What really amazed me was their AWESOME support!!!.....",
-        "review_link": ""
+        "review_link": "https://wordpress.org/support/topic/great-plugin-amazing-support-135/"
     },
     "review3": {
         "client_name": "Patrick",
@@ -92,7 +109,7 @@ const homepage_reviews = {
     },
     "review6": {
         "client_name": "Terence Tay",
-        "profile_img": "/Assets/images/reviews/Paul.J.Lange.png",
+        "profile_img": "/Assets/images/reviews/Terence_Tray.png",
         "title": "",
         "content": "This form is to wordpress what butter is to bread. If you’re in the market for a form builder, something simple, light, easy to use, fast, feature packed, integrated, customisable and affordable, your search ends here.I love Bitform for the reasons stated.....",
         "review_link": ""
@@ -184,71 +201,57 @@ const features = {
 
 }
 
-const integrations = {
-    "googlesheet-mailchimp": {
-        "id": 1,
-        "img_url_left": "/Assets/images/integrations/googlesheet.svg",
-        "img_url_right": "/Assets/images/integrations/mailchimp.svg",
-        "subscription": {
-            "price": "$5",
-            "type": "/month"
-        },
-        "status": "",
-        "desc": {
-            "title1": "googlesheet",
-            "title2": "mailchimp"
-        }
-    },
-    "googlesheet-zohocrm": {
-        "id": 2,
-        "img_url_left": "/Assets/images/integrations/googlesheet.svg",
-        "img_url_right": "/Assets/images/integrations/zohocrm.svg",
-        "subscription": {
-            "price": "$5",
-            "type": "/month"
-        },
-        "status": "",
-        "desc": {
-            "title1": "googlesheet",
-            "title2": "zohocrm"
-        }
-    },
-    "unbounce-zohocrm": {
-        "id": 3,
-        "img_url_left": "/Assets/images/integrations/unbounce.svg",
-        "img_url_right": "/Assets/images/integrations/zohocrm.svg",
-        "subscription": {
-            "price": "$5",
-            "type": "/month"
-        },
-        "status": "",
-        "desc": {
-            "title1": "unbounce",
-            "title2": "zohocrm"
-        }
-    }
-}
+// const secretkey = Buffer.from('bit5347593423integrator').toString('base64');
 
-
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     res.render('pages/index', { products_card, glance_item, homepage_reviews })
 })
 
 router.get('/bitform', (req, res) => {
-    res.render('pages/bitform', { features })
+    res.render('pages/bitform', { features,homepage_reviews })
+})
+
+router.get('/capturedata', async (req, res) => {
+
+    const integrationData = await axios.get(`http://127.0.0.1:8000/api/all_integrations`)
+        .then(res => res.data)
+        .catch(err => {
+            return err
+        })
+
+    const planData = await axios.get(`http://127.0.0.1:8000/api/all_plan_details/`)
+        .then(res => res.data)
+        .catch(err => {
+            return err
+        })
+    const integrationToString = JSON.stringify(integrationData);
+    const planToString = JSON.stringify(planData);
+    fs.writeFile('./integrationDetails.json', integrationToString, (err) => {
+        if (err) {
+            return err
+        } else {
+            return 'Successfully wrote file'
+        }
+    })
+    fs.writeFile('./allPlans.json', planToString, (err) => {
+        if (err) {
+            return err
+        } else {
+            return 'Successfully wrote file'
+        }
+    })
+    res.send("successfully data fetched")
 })
 
 router.get('/bit-integrator', (req, res) => {
-    res.render('pages/bitIntegrator', { glance_item_integrator, integrations })
+    res.render('pages/bitIntegrator', { glance_item_integrator, allIntegrations, allPlans })
 })
 
 router.get('/all-integrations', (req, res) => {
-    res.render('pages/allIntegrations', { integrations })
+    res.render('pages/allIntegrations', { allIntegrations, allPlans })
 })
 
-router.get('/integration-details', (req, res) => {
-    res.render('pages/integrationDetails', {})
-})
+router.get('/integration-details/:integrationId', integrationController.show)
 router.get('/integration-request', (req, res) => {
     res.render('pages/integrationRequest', {})
 })
@@ -257,5 +260,18 @@ router.get('/plugin', (req, res) => {
     res.render('pages/plugin', {})
 })
 
+router.get('/test', (req, res) => {
+    const filters = req.query
+    const filterData = allIntegrations.filter(item => {
+        for (key in filters) {
+            // return item[key] == filters[key]         
+            return item.search != -1
+        }
+    })
+    res.send(filterData)
+
+})
+
 
 module.exports = router
+
